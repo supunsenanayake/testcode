@@ -1,0 +1,18 @@
+name: Daily Singapore Time Job
+
+on:
+  schedule:
+    # 2:18 PM Singapore time (06:18 UTC)
+    - cron: "21 6 * * *"
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run task
+        run: |
+          echo "Running at 2:18 PM Singapore time!"
+          date
