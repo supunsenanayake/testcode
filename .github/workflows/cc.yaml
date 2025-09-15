@@ -17,3 +17,8 @@ jobs:
         run: |
           echo "Running scheduled task (3:00 PM SGT daily)!"
           date
+          echo "UTC time:"
+          date -u
+          echo "Local time (Singapore):"
+          TZ='Asia/Singapore' date
+          
