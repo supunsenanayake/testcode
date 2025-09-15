@@ -1,0 +1,19 @@
+name: supun1234
+
+on:
+  schedule:
+    # Run every day at 3:00 PM Singapore Time (UTC+8) -> 07:00 UTC
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run task
+        run: |
+          echo "Running scheduled task (3:00 PM SGT daily)!"
+          date
